@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
-function Login() {
+function LoginForm() {
   return (
       <div>
         <Form.Control size="lg" type="text" placeholder="What's your name?" />
@@ -13,4 +13,4 @@ function Login() {
   )
 }
 
-export default Login
+export default LoginForm
