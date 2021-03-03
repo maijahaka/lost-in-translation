@@ -1,14 +1,25 @@
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { useState} from 'react'
 
+function LoginForm({ login }) {
+  const [ name, setName ] = useState('')
 
-function LoginForm() {
+  const onNameChanged = event => setName(event.target.value)
+
+  const onLoginFormSubmitted = event => {
+    event.preventDefault()
+    login(name)
+  }
+
   return (
       <div>
-        <Form.Control size="lg" type="text" placeholder="What's your name?" />
-        <br />
-        <Button variant="success">Start</Button>
+        <form onSubmit={onLoginFormSubmitted}>
+          <Form.Control size="lg" type="text" placeholder="What's your name?" onChange={onNameChanged} />
+          <br />
+          <Button variant="success" type="submit">Start</Button>
+        </form>
       </div>
   )
 }
