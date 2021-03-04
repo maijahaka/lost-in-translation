@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import AppHeader from '../shared/AppHeader'
 import { useHistory } from 'react-router-dom'
 
-
 function Translate() {
   let history = useHistory()
   let sentence = window.localStorage.getItem('currentWord')
