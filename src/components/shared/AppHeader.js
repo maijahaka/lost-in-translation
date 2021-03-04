@@ -10,10 +10,10 @@ function AppHeader() {
     <Container>
     <Nav>
   <Nav.Item>
-    <Nav.Link><NavLink to='/translate'>(IMAGE) LOST IN TRANSLATION</NavLink></Nav.Link>
+    <NavLink to='/translate'>(IMAGE) LOST IN TRANSLATION</NavLink>
   </Nav.Item>
   <Nav.Item>
-    <Nav.Link eventKey="link-1"><NavLink to='/profile'>Profile Page {user && user}</NavLink></Nav.Link>
+    <NavLink to='/profile'>Profile Page {user && user}</NavLink>
   </Nav.Item>
 </Nav>
 </Container>
