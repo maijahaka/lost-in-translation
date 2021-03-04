@@ -3,8 +3,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 function Translations() {
+  const translatedWordsArray = JSON.parse(window.localStorage.getItem('sentences'))
+
+  const translationItems = translatedWordsArray.map((translation) => <TranslateCard word={translation} /> )
+  
   return (
-      <TranslateCard />
+    <div>
+      {translationItems}
+    </div>
   )
 }
 
