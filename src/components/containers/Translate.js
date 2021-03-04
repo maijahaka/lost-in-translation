@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container'
 import TranslateForm from '../forms/TranslateForm'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import AppHeader from '../shared/AppHeader'
+import TranslateCard from '../translations/TranslateCard'
 import { useHistory } from 'react-router-dom'
 
 function Translate() {
@@ -32,7 +33,7 @@ function Translate() {
           </Jumbotron>
           <Jumbotron>
               <h2>Translation</h2>
-              <p>{sentence && sentence}</p>
+              {sentence && <TranslateCard word={sentence} />}
           </Jumbotron>
       </Container>
     </div>
