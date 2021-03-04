@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container'
 import TranslateForm from '../forms/TranslateForm'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import AppHeader from '../shared/AppHeader'
+import TranslatedSignLanguage from '../translations/TranslatedSignLanguage'
 
 function Translate() {
   return (
@@ -13,7 +14,7 @@ function Translate() {
               <TranslateForm />
           </Jumbotron>
           <Jumbotron>
-              <p>Placeholder - Hand signs are populated to here</p>
+              <TranslatedSignLanguage sentence='Hello, this is an example!' />
           </Jumbotron>
       </Container>
     </div>
