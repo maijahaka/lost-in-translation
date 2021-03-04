@@ -1,6 +1,7 @@
 import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { NavLink } from 'react-router-dom'
 
 function AppHeader() {
   const user = window.localStorage.getItem('user')
@@ -9,10 +10,10 @@ function AppHeader() {
     <Container>
     <Nav>
   <Nav.Item>
-    <Nav.Link>(IMAGE) LOST IN TRANSLATION</Nav.Link>
+    <Nav.Link><NavLink to='/translate'>(IMAGE) LOST IN TRANSLATION</NavLink></Nav.Link>
   </Nav.Item>
   <Nav.Item>
-    <Nav.Link eventKey="link-1" href="#">Profile Page {user && user}</Nav.Link>
+    <Nav.Link eventKey="link-1"><NavLink to='/profile'>Profile Page {user && user}</NavLink></Nav.Link>
   </Nav.Item>
 </Nav>
 </Container>
