@@ -28,7 +28,7 @@ function Translate() {
     <div>
       <AppHeader />
       <Container>
-          <Jumbotron>
+          <Jumbotron className="translate-jumbotron">
               <TranslateForm save={saveToArray} translate={translateSentence}/>
           </Jumbotron>
           <Jumbotron>

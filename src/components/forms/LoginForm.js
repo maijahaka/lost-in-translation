@@ -18,7 +18,7 @@ function LoginForm({ login }) {
         <form onSubmit={onLoginFormSubmitted}>
           <Form.Control size="lg" type="text" placeholder="What's your name?" onChange={onNameChanged} />
           <br />
-          <Button variant="success" type="submit">Start</Button>
+          <Button variant="info" type="submit">Start</Button>
         </form>
       </div>
   )
