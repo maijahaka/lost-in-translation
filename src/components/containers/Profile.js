@@ -20,12 +20,13 @@ function Profile() {
     <div>
       <AppHeader />
       <Container>
-        <Jumbotron>
+        <Jumbotron className="translate-jumbotron">
           <h1>Hello, {user && user}</h1>
           <p>Here are your ten most recent translations listed below.</p>
         </Jumbotron>
         <Translations />
-        <Button onClick={handleLogoutClick}>Logout</Button>
+        <br />
+        <Button variant="info" onClick={handleLogoutClick}>Logout</Button>
       </Container>
     </div>
   )

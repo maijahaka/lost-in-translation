@@ -1,4 +1,3 @@
-import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,6 +6,7 @@ import {
 import Login from './components/containers/Login'
 import Translate from './components/containers/Translate'
 import Profile from './components/containers/Profile'
+import './App.css';
 
 function App() {
   return (

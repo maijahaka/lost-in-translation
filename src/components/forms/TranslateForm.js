@@ -23,7 +23,7 @@ function TranslateForm({save, translate}) {
       <form onSubmit={onTranslateFormSubmitted}>
         <Form.Control size="lg" type="text" placeholder="Word to translate" onChange={onWordChanged} />
         <br />
-        <Button variant="success" type="submit">Translate</Button>
+        <Button variant="info" type="submit">Translate</Button>
       </form>
     </div>
   )
