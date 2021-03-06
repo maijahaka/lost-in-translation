@@ -5,7 +5,7 @@ const TranslatedSignLanguage = ({ sentence }) => {
   let characters = sentence.split('')
   let signLanguageSigns = characters.map((char, index) => {
     if (char === " ") {
-      return <br />
+      return <br key={index} />
     }
     return <img height="50" src={SignLanguageImages[char]} alt={char} key={index} />
   })

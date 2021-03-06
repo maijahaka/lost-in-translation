@@ -1,25 +1,32 @@
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { useState} from 'react'
+import { useState } from 'react'
 
 function LoginForm({ login }) {
   const [ name, setName ] = useState('')
+  const [ validated, setValidated ] = useState(false)
 
   const onNameChanged = event => setName(event.target.value)
 
   const onLoginFormSubmitted = event => {
     event.preventDefault()
-    login(name)
+    setValidated(true)
+    if (name.length > 0 && name.length <= 30) {
+      login(name)
+    }
   }
 
   return (
       <div>
-        <form onSubmit={onLoginFormSubmitted}>
-          <Form.Control size="lg" type="text" placeholder="What's your name?" onChange={onNameChanged} />
+        <Form noValidate validated={validated} onSubmit={onLoginFormSubmitted}>
+          <Form.Control size="lg" type="text" placeholder="What's your name?" onChange={onNameChanged} required maxLength="30" />
+          <Form.Control.Feedback type="invalid">
+              Please enter a name
+          </Form.Control.Feedback>
           <br />
           <Button variant="info" type="submit">Start</Button>
-        </form>
+        </Form>
       </div>
   )
 }
