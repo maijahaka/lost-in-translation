@@ -13,7 +13,11 @@ function Translate() {
   function saveToArray(sentences) {
     if (sentences !== "" && sentences != null) {
       let sentenceArray = JSON.parse(window.localStorage.getItem('sentences')) || [];
+      if (sentenceArray.length === 10) {
+        sentenceArray.shift()
+      }
       sentenceArray.push(sentences);
+      console.log(sentenceArray.length)
       localStorage.setItem('sentences', JSON.stringify(sentenceArray));
       console.log(window.localStorage.getItem('sentences'))
       history.push('/translate')
