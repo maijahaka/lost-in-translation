@@ -8,7 +8,7 @@ function Translations({ sentences }) {
     translatedWordsArray = JSON.parse(sentences)
   }
 
-  const translationItems = translatedWordsArray.map((translation, index) => <TranslateCard word={translation} key={index} /> )
+  const translationItems = translatedWordsArray.reverse().map((translation, index) => <TranslateCard word={translation} key={index} /> )
   
   return (
     <div>
