@@ -3,6 +3,8 @@ import {
   Switch,
   Route
 } from 'react-router-dom'
+import PublicRoute from './components/routes/PublicRoute'
+import PrivateRoute from './components/routes/PrivateRoute'
 import Login from './components/containers/Login'
 import Translate from './components/containers/Translate'
 import Profile from './components/containers/Profile'
@@ -15,9 +17,9 @@ function App() {
         <div className="App">
           <main>
             <Switch>
-              <Route exact path="/" component={Login} />
-              <Route path="/translate" component={Translate} />
-              <Route path="/profile" component={Profile} />
+              <PublicRoute path="/login" component={Login} />
+              <PrivateRoute exact path="/" component={Translate} />
+              <PrivateRoute path="/profile" component={Profile} />
             </Switch>
           </main>
         </div>

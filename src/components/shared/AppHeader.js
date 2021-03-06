@@ -18,7 +18,7 @@ function AppHeader() {
 
       <Nav>
         <Nav.Item>
-          <NavLink to='/translate'>{faKeyboardIcon} LOST IN TRANSLATION</NavLink>
+          <NavLink to='/'>{faKeyboardIcon} LOST IN TRANSLATION</NavLink>
         </Nav.Item>
         <Nav.Item>
           <NavLink to='/profile'>{faUserCircleIcon} {user && user}</NavLink>

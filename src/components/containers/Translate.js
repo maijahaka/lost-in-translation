@@ -20,7 +20,7 @@ function Translate() {
       console.log(sentenceArray.length)
       localStorage.setItem('sentences', JSON.stringify(sentenceArray));
       console.log(window.localStorage.getItem('sentences'))
-      history.push('/translate')
+      history.push('/')
     }
   }
 

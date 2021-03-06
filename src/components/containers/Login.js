@@ -10,7 +10,7 @@ function Login() {
 
   const handleLogin = (user) => {
     window.localStorage.setItem('user', user)
-    history.push('/translate')
+    history.push('/')
   }
 
   return (
