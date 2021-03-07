@@ -4,11 +4,10 @@ import TranslateForm from '../forms/TranslateForm'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import AppHeader from '../shared/AppHeader'
 import TranslateCard from '../translations/TranslateCard'
-import { useHistory } from 'react-router-dom'
+import { useState } from 'react'
 
 function Translate() {
-  let history = useHistory()
-  let sentence = window.localStorage.getItem('currentWord')
+  const [ sentence, setSentence ] = useState('')
 
   function saveToArray(sentences) {
     if (sentences !== "" && sentences != null) {
@@ -20,12 +19,11 @@ function Translate() {
       console.log(sentenceArray.length)
       localStorage.setItem('sentences', JSON.stringify(sentenceArray));
       console.log(window.localStorage.getItem('sentences'))
-      history.push('/')
     }
   }
 
   function translateSentence(word) {
-    window.localStorage.setItem('currentWord', word)
+    setSentence(word)
   }
 
   return (
