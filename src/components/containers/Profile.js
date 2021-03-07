@@ -32,9 +32,10 @@ function Profile() {
           <h1>Hello, {user && user}</h1>
           <p>Here are your ten most recent translations listed below.</p>
         </Jumbotron>
-        <Translations sentences={sentences} />
+        {!sentences && <p>No translations yet</p>}
+        {sentences && <Translations sentences={sentences} />}
         <br />
-        <Button variant="warning" onClick={handleClearTranslationsClick}>Clear translations</Button>
+        {sentences && <Button variant="warning" onClick={handleClearTranslationsClick}>Clear translations</Button>}
         <Button variant="info" onClick={handleLogoutClick}>Logout</Button>
       </Container>
     </div>
