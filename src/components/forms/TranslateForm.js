@@ -17,6 +17,7 @@ function TranslateForm({save, translate}) {
     if (word.length > 0 && word.length <= 40) {
       save(word)
       translate(word)
+      setWord('')
       setValidated(false)
     } else {
       setValidated(true)
@@ -26,7 +27,7 @@ function TranslateForm({save, translate}) {
   return (
     <div>
       <Form noValidate validated={validated} onSubmit={onTranslateFormSubmitted}>
-        <Form.Control size="lg" type="text" placeholder="Word to translate" onChange={onWordChanged} required maxLength="40" />
+        <Form.Control size="lg" type="text" placeholder="Word to translate" value={word} onChange={onWordChanged} required maxLength="40" />
         <Form.Control.Feedback type="invalid">
               Please enter a word or sentence to be translated
         </Form.Control.Feedback>
