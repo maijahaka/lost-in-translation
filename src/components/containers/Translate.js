@@ -33,10 +33,10 @@ function Translate() {
           <Jumbotron className="translate-jumbotron">
               <TranslateForm save={saveToArray} translate={translateSentence}/>
           </Jumbotron>
-          <Jumbotron>
+          {sentence && <Jumbotron>
               <h2>Translation</h2>
-              {sentence && <TranslateCard word={sentence} />}
-          </Jumbotron>
+              <TranslateCard word={sentence} />
+          </Jumbotron>}
       </Container>
     </div>
   )
