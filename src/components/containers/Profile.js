@@ -35,8 +35,10 @@ function Profile() {
         {!sentences && <p>No translations yet</p>}
         {sentences && <Translations sentences={sentences} />}
         <br />
-        {sentences && <Button variant="warning" onClick={handleClearTranslationsClick}>Clear translations</Button>}
-        <Button variant="info" onClick={handleLogoutClick}>Logout</Button>
+        <div className="profile-page-buttons">
+          {sentences && <Button variant="warning" onClick={handleClearTranslationsClick}>Clear translations</Button>}
+          <Button variant="info" onClick={handleLogoutClick}>Logout</Button>
+        </div>
       </Container>
     </div>
   )
