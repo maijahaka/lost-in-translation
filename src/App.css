@@ -16,6 +16,8 @@
 
 .translate-jumbotron {
   border-radius: 0 0 5px 5px!important;
+  height: 180px;
+  padding-top: 35px;
 }
 
 .card-body {
@@ -51,4 +53,20 @@ a:hover {
 .card {
   border-color: #FFC545;
   margin: 10px 0;
+}
+
+.translated-item {
+  height: 230px;
+  padding-top: 20px;
+}
+
+.profile-page-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 30vw;
+  margin: 0 auto;
+}
+
+.log-in-jumbotron {
+  padding: 30px;
 }
