@@ -5,7 +5,14 @@ import { useEffect, useState } from 'react'
 const TranslatedSignLanguage = ({ sentence }) => {
   const [ imagesLoaded, setImagesLoaded ] = useState(false)
 
-  sentence = sentence.trim().toLowerCase().replaceAll(/[^a-z\s]/g, '')
+  let containsSpecialCharacters = false
+  const specialCharacters = /[^a-z\s]/g
+
+  if (specialCharacters.test(sentence)) {
+    containsSpecialCharacters = true
+    sentence = sentence.trim().toLowerCase().replaceAll(specialCharacters, '')
+  }
+  
   let characters = sentence.split('')
 
   useEffect(() => {
@@ -44,6 +51,7 @@ const TranslatedSignLanguage = ({ sentence }) => {
     <div>
       <div>{!imagesLoaded && <Spinner animation="border" variant="warning" />}</div>
       <div>{imagesLoaded && signLanguageSigns}</div>
+      {containsSpecialCharacters && <div className="mt-2 text-danger">Please note: Characters that are not part of the English alphabet (a-z) are not included in the translation</div>}
     </div>
   )
 }
