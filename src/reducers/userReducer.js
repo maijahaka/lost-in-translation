@@ -1,11 +1,11 @@
-const userReducer = (state = { user: window.localStorage.getItem('user') }, action) => {
+const userReducer = (state = window.localStorage.getItem('user'), action) => {
   switch (action.type) {
     case 'LOGIN':
       window.localStorage.setItem('user', action.payload)
-      return { user: action.payload }
+      return action.payload
     case 'LOGOUT':
       window.localStorage.removeItem('user')
-      return { user: null }
+      return null
     default:
       return state
   }

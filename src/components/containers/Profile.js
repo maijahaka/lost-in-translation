@@ -4,12 +4,13 @@ import Translations from '../translations/Translations'
 import AppHeader from '../shared/AppHeader'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Button from 'react-bootstrap/Button'
-import { useState } from 'react'
+//import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
 function Profile() {
-  const [ sentences, setSentences ] = useState(window.localStorage.getItem('sentences'))
+  const sentences = useSelector(state => state.translations)
+  //const [ sentences, setSentences ] = useState(window.localStorage.getItem('sentences'))
 
   let history = useHistory()
   const dispatch = useDispatch()
@@ -17,14 +18,16 @@ function Profile() {
   const user = useSelector(state => state.user)
 
   const handleLogoutClick = () => {
+    dispatch({ type: 'CLEAR_TRANSLATIONS' })
     dispatch({ type: 'LOGOUT' })
     //window.localStorage.clear()
     history.push('/')
   }
 
   const handleClearTranslationsClick = () => {
-    window.localStorage.removeItem('sentences')
-    setSentences(null)
+    dispatch({ type: 'CLEAR_TRANSLATIONS' })
+    //window.localStorage.removeItem('sentences')
+    //setSentences(null)
   }
 
   return (
@@ -36,7 +39,7 @@ function Profile() {
           <p>Here are your ten most recent translations listed below.</p>
         </Jumbotron>
         {!sentences && <p>No translations yet</p>}
-        {sentences && <Translations sentences={sentences} />}
+        {sentences && <Translations />}
         <br />
         {sentences && <Button variant="warning" onClick={handleClearTranslationsClick}>Clear translations</Button>}
         <Button variant="info" onClick={handleLogoutClick}>Logout</Button>

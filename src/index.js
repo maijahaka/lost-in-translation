@@ -4,11 +4,11 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import './index.css';
 import App from './App';
-import userReducer from './reducers/userReducer'
+import appReducers from './reducers/appReducers'
 import reportWebVitals from './reportWebVitals';
 
 let store = createStore(
-  userReducer,
+  appReducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
