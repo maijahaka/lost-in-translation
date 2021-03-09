@@ -12,7 +12,7 @@ const TranslatedSignLanguage = ({ sentence }) => {
     containsSpecialCharacters = true
     sentence = sentence.trim().toLowerCase().replaceAll(specialCharacters, '')
   }
-  
+
   let characters = sentence.split('')
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const TranslatedSignLanguage = ({ sentence }) => {
     let mounted = true
 
     const loadImage = char => {
-      if (char !== " ") {
+      if (char !== ' ') {
         return new Promise((resolve, reject) => {
           const loadImg = new Image()
           loadImg.src = SignLanguageImages[char]
@@ -35,13 +35,13 @@ const TranslatedSignLanguage = ({ sentence }) => {
 
     Promise.all(characters.map(char => loadImage(char)))
       .then(() => {if (mounted) {setImagesLoaded(true)}})
-      .catch(err => console.log("Failed to load images", err))
+      .catch(err => console.log('Failed to load images', err))
 
     return (() => { mounted = false })
   })
-  
+
   let signLanguageSigns = characters.map((char, index) => {
-    if (char === " ") {
+    if (char === ' ') {
       return <br key={index} />
     }
     return <img height="50" src={SignLanguageImages[char]} alt={char} key={index} />

@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState } from 'react'
 
 
-function TranslateForm({save, translate}) {
+function TranslateForm({ save, translate }) {
   const [word, setWord] = useState('')
   const [validated, setValidated] = useState(false)
 

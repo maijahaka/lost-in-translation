@@ -8,7 +8,7 @@ import Login from './components/containers/Login'
 import Translate from './components/containers/Translate'
 import Profile from './components/containers/Profile'
 import NotFound from './components/containers/NotFound'
-import './App.css';
+import './App.css'
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
         </div>
       </Router>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

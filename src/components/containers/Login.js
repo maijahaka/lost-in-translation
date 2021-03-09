@@ -17,12 +17,12 @@ function Login() {
 
   return (
     <Container>
-        <Jumbotron className="log-in-jumbotron">
-            <h1>Lost in Translation!</h1>
-            <h2>Get started</h2>
-            <br />
-            <LoginForm login={handleLogin} />
-        </Jumbotron>
+      <Jumbotron className="log-in-jumbotron">
+        <h1>Lost in Translation!</h1>
+        <h2>Get started</h2>
+        <br />
+        <LoginForm login={handleLogin} />
+      </Jumbotron>
     </Container>
   )
 }

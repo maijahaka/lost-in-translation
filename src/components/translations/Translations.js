@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 function Translations() {
   const translatedWordsArray = useSelector(state => state.translations)
   const translationItems = translatedWordsArray.reverse().map((translation, index) => <TranslateCard word={translation} key={index} /> )
-  
+
   return (
     <div>
       {translationItems}

@@ -14,16 +14,16 @@ function AppHeader() {
 
   return (
     <Container>
-          <div className="app-header">
+      <div className="app-header">
 
-      <Nav>
-        <Nav.Item>
-          <NavLink to='/'>{faKeyboardIcon} LOST IN TRANSLATION</NavLink>
-        </Nav.Item>
-        <Nav.Item>
-          <NavLink to='/profile'>{faUserCircleIcon} {user && user}</NavLink>
-        </Nav.Item>
-      </Nav>
+        <Nav>
+          <Nav.Item>
+            <NavLink to='/'>{faKeyboardIcon} LOST IN TRANSLATION</NavLink>
+          </Nav.Item>
+          <Nav.Item>
+            <NavLink to='/profile'>{faUserCircleIcon} {user && user}</NavLink>
+          </Nav.Item>
+        </Nav>
       </div>
 
     </Container>

@@ -13,7 +13,7 @@ function Translate() {
   const dispatch = useDispatch()
 
   function saveToArray(sentences) {
-    if (sentences !== "" && sentences != null) {
+    if (sentences !== '' && sentences != null) {
       dispatch(translate(sentences))
     }
   }
@@ -26,13 +26,13 @@ function Translate() {
     <div>
       <AppHeader />
       <Container>
-          <Jumbotron className="translate-jumbotron">
-              <TranslateForm save={saveToArray} translate={translateSentence}/>
-          </Jumbotron>
-          {sentence && <Jumbotron className="translated-item">
-              <h2>Translation</h2>
-              <TranslateCard word={sentence} />
-          </Jumbotron>}
+        <Jumbotron className="translate-jumbotron">
+          <TranslateForm save={saveToArray} translate={translateSentence}/>
+        </Jumbotron>
+        {sentence && <Jumbotron className="translated-item">
+          <h2>Translation</h2>
+          <TranslateCard word={sentence} />
+        </Jumbotron>}
       </Container>
     </div>
   )

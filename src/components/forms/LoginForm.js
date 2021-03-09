@@ -18,16 +18,16 @@ function LoginForm({ login }) {
   }
 
   return (
-      <div>
-        <Form noValidate validated={validated} onSubmit={onLoginFormSubmitted}>
-          <Form.Control size="lg" type="text" placeholder="What's your name?" onChange={onNameChanged} required maxLength="30" />
-          <Form.Control.Feedback type="invalid">
+    <div>
+      <Form noValidate validated={validated} onSubmit={onLoginFormSubmitted}>
+        <Form.Control size="lg" type="text" placeholder="What's your name?" onChange={onNameChanged} required maxLength="30" />
+        <Form.Control.Feedback type="invalid">
               Please enter a name
-          </Form.Control.Feedback>
-          <br />
-          <Button variant="info" type="submit">Start</Button>
-        </Form>
-      </div>
+        </Form.Control.Feedback>
+        <br />
+        <Button variant="info" type="submit">Start</Button>
+      </Form>
+    </div>
   )
 }
 
