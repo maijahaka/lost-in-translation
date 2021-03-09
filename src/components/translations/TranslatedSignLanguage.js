@@ -6,6 +6,9 @@ const TranslatedSignLanguage = ({ sentence }) => {
   // record if all sign language images needed have been fetched from the server
   const [ imagesLoaded, setImagesLoaded ] = useState(false)
 
+  // sign language images are defined for lowercase letters
+  sentence = sentence.toLowerCase()
+
   let containsSpecialCharacters = false
   const specialCharacters = /[^a-z\s]/g
 
@@ -13,7 +16,7 @@ const TranslatedSignLanguage = ({ sentence }) => {
     containsSpecialCharacters = true
 
     // only letters a-z are included in the sign language images used
-    sentence = sentence.trim().toLowerCase().replaceAll(specialCharacters, '')
+    sentence = sentence.trim().replaceAll(specialCharacters, '')
   }
 
   let characters = sentence.split('')
