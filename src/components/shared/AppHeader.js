@@ -5,10 +5,10 @@ import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faKeyboard } from '@fortawesome/free-solid-svg-icons'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
-
+import { useSelector } from 'react-redux'
 
 function AppHeader() {
-  const user = window.localStorage.getItem('user')
+  const user = useSelector(state => state.user)
   const faKeyboardIcon = <FontAwesomeIcon icon={faKeyboard} />
   const faUserCircleIcon = <FontAwesomeIcon icon={faUserCircle} />
 
