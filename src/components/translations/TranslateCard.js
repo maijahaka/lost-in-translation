@@ -2,12 +2,12 @@ import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import TranslatedSignLanguage from './TranslatedSignLanguage'
 
-function TranslateCard({ word }) {
+function TranslateCard({ sentence }) {
   return (
     <Card>
       <Card.Body>
-        <Card.Title>{word}</Card.Title>
-        <TranslatedSignLanguage sentence={word} />
+        <Card.Title>{sentence}</Card.Title>
+        <TranslatedSignLanguage sentence={sentence} />
       </Card.Body>
     </Card>
   )

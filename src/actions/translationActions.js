@@ -1,5 +1,5 @@
-export const translate = sentence => ({
-  type: 'TRANSLATE',
+export const saveTranslation = sentence => ({
+  type: 'SAVE_TRANSLATION',
   payload: sentence
 })
 

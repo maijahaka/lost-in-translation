@@ -3,23 +3,22 @@ import Form from 'react-bootstrap/Form'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState } from 'react'
 
-
-function TranslateForm({ save, translate }) {
-  const [word, setWord] = useState('')
+const TranslateForm = ({ save, translate }) => {
+  const [sentence, setSentence] = useState('')
   const [validated, setValidated] = useState(false)
 
-  function onWordChanged(e) {
-    setWord(e.target.value)
-  }
+  const onSentenceChanged = event => setSentence(event.target.value)
 
-  function onTranslateFormSubmitted(e) {
-    e.preventDefault()
-    if (word.length > 0 && word.length <= 40) {
-      save(word)
-      translate(word)
-      setWord('')
+  const onTranslateFormSubmitted = event => {
+    event.preventDefault()
+
+    if (sentence.length > 0 && sentence.length <= 40) {
+      translate(sentence)
+      setSentence('')
+      // reset HTML form validation messages for the next translation
       setValidated(false)
     } else {
+      // make HTML form validation messages visible
       setValidated(true)
     }
   }
@@ -27,9 +26,16 @@ function TranslateForm({ save, translate }) {
   return (
     <div>
       <Form noValidate validated={validated} onSubmit={onTranslateFormSubmitted}>
-        <Form.Control size="lg" type="text" placeholder="Word to translate" value={word} onChange={onWordChanged} required maxLength="40" />
+        <Form.Control
+          size="lg"
+          type="text"
+          placeholder="Word or sentence to translate"
+          value={sentence}
+          onChange={onSentenceChanged}
+          required maxLength="40"
+        />
         <Form.Control.Feedback type="invalid">
-              Please enter a word or sentence to be translated
+          Please enter a word or sentence to be translated
         </Form.Control.Feedback>
         <br />
         <Button variant="info" type="submit">Translate</Button>

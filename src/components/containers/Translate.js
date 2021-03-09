@@ -1,25 +1,21 @@
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Container from 'react-bootstrap/Container'
-import TranslateForm from '../forms/TranslateForm'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import AppHeader from '../shared/AppHeader'
+import TranslateForm from '../forms/TranslateForm'
 import TranslateCard from '../translations/TranslateCard'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { translate } from '../../actions/translationsActions'
+import { saveTranslation } from '../../actions/translationActions'
 
-function Translate() {
+const Translate = () => {
   const [ sentence, setSentence ] = useState('')
+
   const dispatch = useDispatch()
 
-  function saveToArray(sentences) {
-    if (sentences !== '' && sentences != null) {
-      dispatch(translate(sentences))
-    }
-  }
-
-  function translateSentence(word) {
-    setSentence(word)
+  const handleTranslate = sentenceToTranslate => {
+    setSentence(sentenceToTranslate)
+    dispatch(saveTranslation(sentenceToTranslate))
   }
 
   return (
@@ -27,12 +23,15 @@ function Translate() {
       <AppHeader />
       <Container>
         <Jumbotron className="translate-jumbotron">
-          <TranslateForm save={saveToArray} translate={translateSentence}/>
+          <TranslateForm translate={handleTranslate} />
         </Jumbotron>
-        {sentence && <Jumbotron className="translated-item">
-          <h2>Translation</h2>
-          <TranslateCard word={sentence} />
-        </Jumbotron>}
+        {/* show the translated sentence once a translation has been made */}
+        {sentence &&
+          <Jumbotron className="translated-item">
+            <h2>Translation</h2>
+            <TranslateCard sentence={sentence} />
+          </Jumbotron>
+        }
       </Container>
     </div>
   )

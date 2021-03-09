@@ -3,8 +3,7 @@ import Container from 'react-bootstrap/Container'
 import AppHeader from '../shared/AppHeader'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-function NotFound() {
-
+const NotFound = () => {
   return (
     <div>
       <AppHeader />

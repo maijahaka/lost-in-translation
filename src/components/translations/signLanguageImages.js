@@ -25,7 +25,7 @@ import x from '../../images/sign-language-signs/x.png'
 import y from '../../images/sign-language-signs/u.png'
 import z from '../../images/sign-language-signs/z.png'
 
-const SignLanguageImages = {
+const SIGN_LANGUAGE_IMAGES = {
   a,
   b,
   c,
@@ -54,4 +54,4 @@ const SignLanguageImages = {
   z
 }
 
-export default SignLanguageImages
+export default SIGN_LANGUAGE_IMAGES

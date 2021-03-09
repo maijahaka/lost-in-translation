@@ -1,11 +1,11 @@
 import userReducer from './userReducer'
-import translationsReducer from './translationsReducer'
+import translationReducer from './translationReducer'
 
 import { combineReducers } from 'redux'
 
 const appReducers = combineReducers({
   user: userReducer,
-  translations: translationsReducer
+  translations: translationReducer
 })
 
 export default appReducers

@@ -1,6 +1,6 @@
 const translationsReducer = (state = JSON.parse(window.localStorage.getItem('sentences')), action) => {
   switch (action.type) {
-      case 'TRANSLATE':
+      case 'SAVE_TRANSLATION':
         if (!state) {
           state = []
         }

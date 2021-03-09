@@ -1,17 +1,18 @@
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Container from 'react-bootstrap/Container'
-import LoginForm from '../forms/LoginForm'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import LoginForm from '../forms/LoginForm'
 import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { login } from '../../actions/userActions'
 
-function Login() {
-  let history = useHistory()
+const Login = () => {
   const dispatch = useDispatch()
+  let history = useHistory()
 
-  const handleLogin = (user) => {
+  const handleLogin = user => {
     dispatch(login(user))
+    // direct user to the main page after login
     history.push('/')
   }
 
