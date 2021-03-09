@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 
 const Translations = () => {
   const translations = useSelector(state => state.translations)
-  const translationItems = translations.reverse().map((sentence, index) => <TranslateCard sentence={sentence} key={index} /> )
+  const translationItems = [...translations].reverse().map((sentence, index) => <TranslateCard sentence={sentence} key={index} /> )
 
   return (
     <div>
