@@ -6,16 +6,19 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Button from 'react-bootstrap/Button'
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 
 function Profile() {
   const [ sentences, setSentences ] = useState(window.localStorage.getItem('sentences'))
 
   let history = useHistory()
+  const dispatch = useDispatch()
 
-  const user = window.localStorage.getItem('user')
+  const user = useSelector(state => state.user)
 
   const handleLogoutClick = () => {
-    window.localStorage.clear()
+    dispatch({ type: 'LOGOUT' })
+    //window.localStorage.clear()
     history.push('/')
   }
 

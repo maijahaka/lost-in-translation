@@ -1,7 +1,8 @@
 import { Route, Redirect } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const PrivateRoute = ({ path, component }) => {
-  if (!window.localStorage.getItem('user')) {
+  if (!useSelector(state => state.user)) {
     return <Redirect to="/login" />
   }
 
