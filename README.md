@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Lost in Translation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a single-page application built with [React](https://reactjs.org/) for translating words and sentences into [American Sign Language](https://en.wikipedia.org/wiki/American_Sign_Language).
 
-## Available Scripts
+### Contributors
+[jessemaa](https://github.com/jessemaa) & [maijahaka](https://github.com/maijahaka/)
 
-In the project directory, you can run:
+## How to use
 
-### `npm start`
+The application is accessible at https://lost-in-translation.vercel.app/.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Login page
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The applications opens on a login page, which has an input field for entering a name. The name should have 1-30 characters. Once the name has been entered, the application is started by clicking the 'Start' button.
 
-### `npm test`
+### Translation page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The translation page has an input box, where the word or sentence to be translated can be entered. The length of the input should be between 1 and 40 characters.
 
-### `npm run build`
+Translation can be requested by clicking the 'Translate' button. After this, the translation of the input into American sign language becomes visible underneath the input box: the image of the sign for each letter in the input is shown.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Any characters that are not part of the English alphabet (uppercase or lowercase a-z) are ignored in the translation, i.e. only the signs for the letters a-z are shown in the translation. To make the separation of words clearer, each word starts on a new line.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Another translation can be requested by entering a new word or sentence in the input field and clicking 'Translate'.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Profile page
 
-### `npm run eject`
+The profile page shows the name of the current user as well a list of their recent translations. Up to 10 translations are presented, so if the user has made more translations than this, only the 10 most recent ones are shown.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The 'Clear translations' button at the bottom of the page clears the user's translation history.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The 'Logout' button logs out the current user and clears their translation history as well as directs them to the login page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Run the project locally
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Use the following steps to run the project on your local machine.
 
-## Learn More
+### Clone the source code
+```
+git clone https://github.com/maijahaka/lost-in-translation.git
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Move to the project folder
+```
+cd lost-in-translation
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Install dependencies
+```
+npm install
+```
 
-### Code Splitting
+### Run the application in development mode
+```
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Open [http://localhost:3000](http://localhost:3000) to view the application in the browser.
 
-### Analyzing the Bundle Size
+### Build the app for production
+```
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Builds the app for production to the `build` folder.
