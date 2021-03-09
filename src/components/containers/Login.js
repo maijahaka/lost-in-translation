@@ -4,15 +4,14 @@ import LoginForm from '../forms/LoginForm'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-
+import { login } from '../../actions/userActions'
 
 function Login() {
   let history = useHistory()
   const dispatch = useDispatch()
 
   const handleLogin = (user) => {
-    dispatch({ type: 'LOGIN', payload: user })
-    //window.localStorage.setItem('user', user)
+    dispatch(login(user))
     history.push('/')
   }
 

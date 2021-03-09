@@ -7,10 +7,11 @@ import Button from 'react-bootstrap/Button'
 //import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
+import { logout } from '../../actions/userActions'
+import { clearTranslations } from '../../actions/translationsActions'
 
 function Profile() {
   const sentences = useSelector(state => state.translations)
-  //const [ sentences, setSentences ] = useState(window.localStorage.getItem('sentences'))
 
   let history = useHistory()
   const dispatch = useDispatch()
@@ -18,16 +19,13 @@ function Profile() {
   const user = useSelector(state => state.user)
 
   const handleLogoutClick = () => {
-    dispatch({ type: 'CLEAR_TRANSLATIONS' })
-    dispatch({ type: 'LOGOUT' })
-    //window.localStorage.clear()
+    dispatch(clearTranslations())
+    dispatch(logout())
     history.push('/')
   }
 
   const handleClearTranslationsClick = () => {
-    dispatch({ type: 'CLEAR_TRANSLATIONS' })
-    //window.localStorage.removeItem('sentences')
-    //setSentences(null)
+    dispatch(clearTranslations())
   }
 
   return (
